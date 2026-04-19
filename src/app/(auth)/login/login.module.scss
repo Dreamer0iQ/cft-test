@@ -213,6 +213,13 @@
 
 .submit {
   margin-top: 6px;
+  // Mantine filled с cyan shade-3 даёт почти белый фон — добиваем контраст руками
+  color: #041318;
+  font-weight: 600;
+
+  &:not(:disabled):hover {
+    color: #041318;
+  }
 }
 
 .divider {

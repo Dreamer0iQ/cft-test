@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 
-const BASE = 'http://85.198.108.217';
+const BASE = process.env.BASE_URL ?? 'http://localhost:3001';
 
 const browser = await chromium.launch();
 const ctx = await browser.newContext({

@@ -64,14 +64,6 @@ export function LoginForm() {
         <span>cft.audit</span>
       </div>
 
-      <div className={styles.tagRow}>
-        <span className={styles.tag}>
-          <span className={styles.tagDot} />
-          Внутренний сервис
-        </span>
-        <span className={styles.meta}>v0.1</span>
-      </div>
-
       <h2 className={styles.title}>Вход в систему</h2>
       <p className={styles.subtitle}>
         Аутентификация по корпоративному email. Доступ к записям аудита определяется ролью.
@@ -101,6 +93,7 @@ export function LoginForm() {
             loading={pending}
             className={styles.submit}
             size="md"
+            autoContrast
             fullWidth
           >
             Войти

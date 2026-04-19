@@ -18,6 +18,8 @@ const cyan: MantineColorsTuple = [
 export const theme = createTheme({
   primaryColor: 'cyan',
   primaryShade: { light: 6, dark: 3 },
+  // светло-бирюзовый в filled-кнопках даёт нечитаемый белый текст — autoContrast сам ставит тёмный
+  autoContrast: true,
   defaultRadius: 'md',
   fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif',
   headings: { fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' },
