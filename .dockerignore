@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.gitignore
+.env
+.env.local
+.postgres-data
+*.log
+README.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+.DS_Store
+Задание тестовое.docx
+tsconfig.tsbuildinfo

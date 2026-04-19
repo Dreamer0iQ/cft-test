@@ -1,0 +1,113 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  L1
+  L2
+  L3
+}
+
+enum Severity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum AuditStatus {
+  NEW
+  IN_PROGRESS
+  UNDER_REVIEW
+  RESOLVED
+  REJECTED
+  ACCEPTED_RISK
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         Role     @default(L1)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  auditsResponsible AuditResult[] @relation("responsible")
+  comments          Comment[]
+  activityLogs      ActivityLog[]
+}
+
+model System {
+  id     String  @id @default(cuid())
+  name   String  @unique
+  module String?
+
+  audits AuditResult[]
+}
+
+model AuditResult {
+  id             String      @id @default(cuid())
+  title          String
+  systemId       String
+  category       String
+  description    String      @db.Text
+  severity       Severity
+  status         AuditStatus @default(NEW)
+  responsibleId  String?
+  detectedAt     DateTime
+  dueDate        DateTime?
+  resolvedAt     DateTime?
+  riskScore      Float       @default(0)
+  probability    Int         @default(3)
+  impact         Int         @default(3)
+  hasMitigation  Boolean     @default(false)
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  system      System        @relation(fields: [systemId], references: [id])
+  responsible User?         @relation("responsible", fields: [responsibleId], references: [id], onDelete: SetNull)
+  comments    Comment[]
+  logs        ActivityLog[]
+
+  @@index([systemId])
+  @@index([status])
+  @@index([severity])
+  @@index([responsibleId])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  auditId   String
+  authorId  String
+  text      String
+  createdAt DateTime @default(now())
+
+  audit  AuditResult @relation(fields: [auditId], references: [id], onDelete: Cascade)
+  author User        @relation(fields: [authorId], references: [id])
+
+  @@index([auditId])
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  auditId   String
+  actorId   String
+  action    String
+  field     String?
+  oldValue  String?
+  newValue  String?
+  createdAt DateTime @default(now())
+
+  audit AuditResult @relation(fields: [auditId], references: [id], onDelete: Cascade)
+  actor User        @relation(fields: [actorId], references: [id])
+
+  @@index([auditId])
+}

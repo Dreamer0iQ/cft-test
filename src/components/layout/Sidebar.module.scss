@@ -1,0 +1,134 @@
+.sidebar {
+  width: 244px;
+  min-width: 244px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px 14px;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.brandDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.brandText {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.nav {
+  flex: 1;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:hover {
+    background: var(--accent-soft);
+    color: var(--text-primary);
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+}
+
+.label {
+  font-size: 14px;
+}
+
+.active {
+  background: var(--sidebar-active-bg);
+  color: var(--sidebar-active-text);
+  font-weight: 600;
+  border-color: var(--accent-border);
+  box-shadow: 0 0 18px var(--accent-glow);
+
+  .icon {
+    color: var(--sidebar-active-text);
+  }
+
+  &:hover {
+    background: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+  }
+}
+
+.activeParent {
+  color: var(--text-primary);
+}
+
+.chev {
+  transition: transform 150ms ease;
+  color: var(--text-secondary);
+}
+.chevOpen {
+  transform: rotate(90deg);
+}
+
+.subNav {
+  margin: 4px 0 4px 30px;
+  padding-left: 10px;
+  border-left: 1px solid var(--panel-border);
+}
+
+.subLink {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  transition: background 150ms ease, color 150ms ease;
+
+  &:hover {
+    background: var(--accent-soft);
+    color: var(--text-primary);
+  }
+}
+
+.subActive {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.footer {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 0 10px;
+  letter-spacing: 0.04em;
+}

@@ -1,0 +1,14 @@
+node_modules
+.next
+.env
+*.log
+.DS_Store
+dist
+build
+.postgres-data
+next-env.d.ts
+tsconfig.tsbuildinfo
+/playwright-report/
+/test-results/
+coverage/
+Задание тестовое.docx
