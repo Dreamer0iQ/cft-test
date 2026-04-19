@@ -1,0 +1,24 @@
+.modalContent {
+  background: var(--bg-panel);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.modalHeader {
+  background: transparent;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.modalTitle {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}

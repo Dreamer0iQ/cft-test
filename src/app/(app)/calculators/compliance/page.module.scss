@@ -1,0 +1,147 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sectionIcon {
+  color: var(--accent);
+  display: inline-flex;
+}
+
+.label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.totals {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.percent {
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 30px var(--accent-glow);
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.percentUnit {
+  font-size: 32px;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+.levelChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+}
+
+.levelFull {
+  background: rgba(34, 197, 94, 0.16);
+  color: #86EFAC;
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.levelPartial {
+  background: rgba(245, 158, 11, 0.18);
+  color: #FBBF24;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.levelFail {
+  background: rgba(239, 68, 68, 0.2);
+  color: #FCA5A5;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+:global(:root[data-mantine-color-scheme='light']) {
+  .levelFull {
+    background: rgba(22, 163, 74, 0.1);
+    color: #15803D;
+    border-color: rgba(22, 163, 74, 0.3);
+  }
+  .levelPartial {
+    background: rgba(217, 119, 6, 0.12);
+    color: #B45309;
+    border-color: rgba(217, 119, 6, 0.32);
+  }
+  .levelFail {
+    background: rgba(220, 38, 38, 0.1);
+    color: #B91C1C;
+    border-color: rgba(220, 38, 38, 0.35);
+  }
+}
+
+.barWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.barTrack {
+  width: 100%;
+  height: 8px;
+  background: var(--panel-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent));
+  box-shadow: 0 0 14px var(--accent-glow);
+  transition: width 200ms ease;
+}
+
+.barMeta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}

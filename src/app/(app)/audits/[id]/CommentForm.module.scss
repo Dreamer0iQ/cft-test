@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  background: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-primary);
+
+  &:focus {
+    border-color: var(--accent-border);
+  }
+}

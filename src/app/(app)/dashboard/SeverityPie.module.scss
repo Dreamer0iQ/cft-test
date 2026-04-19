@@ -1,0 +1,124 @@
+.wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 8px 4px 4px;
+  min-height: 240px;
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.donutBox {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.centerValue {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  color: #E6F3F6;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.centerLabel {
+  margin-top: 4px;
+  font-size: 11px;
+  color: rgba(230, 243, 246, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.legendRow {
+  display: grid;
+  grid-template-columns: 10px 1fr auto minmax(60px, 1fr) 40px;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  color: rgba(230, 243, 246, 0.85);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.legendCount {
+  font-variant-numeric: tabular-nums;
+  color: #E6F3F6;
+  font-weight: 600;
+  min-width: 28px;
+  text-align: right;
+}
+
+.bar {
+  position: relative;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.barFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.75;
+  border-radius: 2px;
+  transition: width 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.legendPct {
+  font-variant-numeric: tabular-nums;
+  color: rgba(230, 243, 246, 0.55);
+  font-size: 12px;
+  text-align: right;
+}
+
+.empty {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(230, 243, 246, 0.5);
+  font-size: 13px;
+}

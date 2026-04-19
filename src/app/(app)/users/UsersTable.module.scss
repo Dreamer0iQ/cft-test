@@ -1,0 +1,93 @@
+.wrap {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+.table {
+  width: 100%;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.thead {
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.th {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.row {
+  border-bottom: 1px solid var(--divider);
+  transition: background 120ms ease;
+
+  &:hover {
+    background: var(--accent-soft);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.nameCell {
+  color: var(--text-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.name {
+  color: var(--text-primary);
+}
+
+.youTag {
+  display: inline-block;
+  padding: 1px 8px;
+  font-size: 11px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: var(--text-secondary);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.roleCell {
+  position: relative;
+}
+
+.roleWrap {
+  position: relative;
+  display: inline-flex;
+  min-width: 180px;
+}
+
+.select {
+  width: 180px;
+}
+
+.date {
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.empty {
+  border-bottom: none;
+}

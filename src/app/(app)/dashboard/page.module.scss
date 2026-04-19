@@ -1,0 +1,45 @@
+.wrap {
+  width: 100%;
+  max-width: 100%;
+}
+
+.title {
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.headlineCard {
+  padding: 24px 24px 12px;
+}
+
+.panelTitle {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.riskTile {
+  background: var(--bg-panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.riskLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.riskValue {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent-glow);
+}

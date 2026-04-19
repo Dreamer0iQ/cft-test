@@ -1,0 +1,134 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sectionIcon {
+  color: var(--accent);
+  display: inline-flex;
+}
+
+.label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.deadline {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 22px var(--accent-glow);
+  font-variant-numeric: tabular-nums;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.metaValue {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+}
+
+.statusOn {
+  background: rgba(34, 197, 94, 0.16);
+  color: #86EFAC;
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.statusDue {
+  background: rgba(245, 158, 11, 0.18);
+  color: #FBBF24;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.statusOver {
+  background: rgba(239, 68, 68, 0.2);
+  color: #FCA5A5;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.statusMet {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93C5FD;
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+:global(:root[data-mantine-color-scheme='light']) {
+  .statusOn {
+    background: rgba(22, 163, 74, 0.1);
+    color: #15803D;
+    border-color: rgba(22, 163, 74, 0.3);
+  }
+  .statusDue {
+    background: rgba(217, 119, 6, 0.12);
+    color: #B45309;
+    border-color: rgba(217, 119, 6, 0.32);
+  }
+  .statusOver {
+    background: rgba(220, 38, 38, 0.1);
+    color: #B91C1C;
+    border-color: rgba(220, 38, 38, 0.35);
+  }
+  .statusMet {
+    background: rgba(37, 99, 235, 0.1);
+    color: #1D4ED8;
+    border-color: rgba(37, 99, 235, 0.3);
+  }
+}
+
+.normHint {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
