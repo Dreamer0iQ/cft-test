@@ -12,3 +12,5 @@ tsconfig.tsbuildinfo
 /test-results/
 coverage/
 Задание тестовое.docx
+record.mov
+*.mov

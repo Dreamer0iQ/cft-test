@@ -13,6 +13,12 @@
 
 </div>
 
+<p align="center">
+  <video src="docs/record.mp4" controls width="820" muted playsinline></video>
+</p>
+
+> Если видео не проиграется прямо в README — <a href="docs/record.mp4">открыть в отдельной вкладке</a>.
+
 ## Демо
 
 Задеплоено на собственный VPS, доступно без VPN:
